@@ -18,18 +18,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
-    <style>
-        .white-search{
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
-            height: 65px;
-            font-size: 40px;
-            line-height: 65px;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -45,6 +34,7 @@
         <li><a href="#screenshot">Screenshots</a></li>
         <li><a href="#testimonial">Testimonial</a></li>
         <li><a href="#clients">contract</a></li>
+        <li><a href="#login">Login</a></li>
     </ul>
     <button class="close-button" id="close-button">Close Menu</button>
 </div>
@@ -172,6 +162,37 @@
         </div>
     </section>
 
+    <!-- Login start-->
+
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                    <h1>Log in your account</h1>
+                    <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email or Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="key" class="sr-only">Password</label>
+                            <input type="password" name="key" id="key" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <span class="character-checkbox" onclick="showPassword()"></span>
+                            <span class="password-label"> Show password</span>
+                        </div>
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                    </form>
+                    <a href="javascript:void(0) ;" class="forget">Forgot your password?</a>
+                    <hr/>
+                </div> <!-- /.col-xs-12 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </section>
+
+    <!-- End of Login-->
+
 
 
     <section id="copyright">
@@ -211,6 +232,26 @@
         // This command is used to initialize some elements and make them work properly
         $.material.init();
     });
+</script>
+
+<script>
+    function showPassword() {
+
+        var key_attr = $('#key').attr('type');
+
+        if(key_attr != 'text') {
+
+            $('.checkbox').addClass('show');
+            $('#key').attr('type', 'text');
+
+        } else {
+
+            $('.checkbox').removeClass('show');
+            $('#key').attr('type', 'password');
+
+        }
+
+    }
 </script>
 
 </body>
